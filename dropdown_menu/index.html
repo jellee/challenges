@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dropdown Menu</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="dropdown_menu.css">
+</head>
+<body>
+
+<ul class="wrapper">Hello world.</ul>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="dropdown_menu.js"></script>
+<script>
+$(function () {
+	$container = $('.wrapper');
+
+	// making each list element (menu elements)
+	var getNode = function(node) {
+		var nodeString = "";
+		$.each(node, function() {
+			nodeString += "<li class='menu " + this.title.split(' ')[0].toLowerCase();
+
+			// check for submenus
+			if (!this.submenu) nodeString += "'>" + this.title + "</li>";
+			else { // if there's a submenu, add nested and add extra nodes
+				nodeString += " nested'>" + this.title + "<ul>";
+				nodeString += getNode(this.submenu);
+				nodeString += "</ul></li>";
+			}
+		});
+		return nodeString;
+	}
+
+	// adding the elements according to the json
+	$container.append(getNode(MENU));
+
+	// adding the onclick alert
+	$('.menu').click(function(e) { 
+		e.stopPropagation();
+		alert($(this).contents().eq(0).text());
+	});
+});
+</script>
+</body>
+</html>
