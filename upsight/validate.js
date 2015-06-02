@@ -30,7 +30,7 @@ function isValid(strParam) {
 function validateString(strParam) {
   var strings = strParam.split(/\s+/);
 
-  // run validateString for each string
+  // run isValid for each string
   for(var i=0; i < strings.length; i++) {
   	var valid = "";
   	if (isValid(strings[i])) {
@@ -41,6 +41,7 @@ function validateString(strParam) {
  	console.log(strings[i] + " " + valid);
   }
 }
+
 validateString("Ze")
 validateString("Za Nj")
 validateString("QZja\nRhfa")
