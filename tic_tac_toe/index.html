@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <title>Tic-Tac Toe</title>
+        <meta name="description" content="tic tac toe game with computer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <h1>Unbeatable Tic Tac Toe</h1>
+            <div class="row">
+                <div class="choices col-md-4">
+                    <div id="name"><h4>Who are you?</h4>
+                        <input type="text" name="name" value="human" /></div>
+                    <div id="symbol"><h4>Do you want to be <i class="fa fa-android fa-lg"></i> or <i class="fa fa-apple fa-lg"></i>?</h4>
+                        <input type="radio" name="symbol" value="android" /> <i class="fa fa-android fa-lg"></i><br />
+                        <input type="radio" name="symbol" value="apple" /> <i class="fa fa-apple fa-lg"></i></div>
+                    <div id="start"><h4>Do you want to start?</h4>
+                        <input type="radio" name="start" value=1 /> Yes<br />
+                        <input type="radio" name="start" value=0 /> No</div>
+
+                    <input type="submit" value="Start Game" id="formSubmit" />
+                </div>
+                <!-- board is filled in with js -->
+                <div class="board col-md-4 hidden">
+                    <div class="row">
+                        <div class="col-xs-4" id="00"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4 border-v" id="01"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4" id="02"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                    </div><div class="row border-h">
+                        <div class="col-xs-4" id="10"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4 border-v" id="11"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4" id="12"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                    </div><div class="row">
+                        <div class="col-xs-4" id="20"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4 border-v" id="21"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                        <div class="col-xs-4" id="22"><div class="btn"><i class="fa fa-square fa-5x"></i></div></div>
+                    </div>
+                </div>
+                <div class="stats col-md-4">
+                    <div class="status"></div>
+                    <div class="turn"></div>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="main.js"></script>
+    </body>
+</html>
